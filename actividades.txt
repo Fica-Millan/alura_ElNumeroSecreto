@@ -1,0 +1,314 @@
+D E S A F I O S - I n t e r a c t u a n d o   c o n   H T M L  
+
+
+>>> 1. Descarga otro proyecto haciendo clic en este enlace y ábrelo en Visual Studio Code.
+
+https://github.com/alura-es-cursos/js-curso-2.git
+
+>>> 2. Cambia el contenido de la etiqueta h1 con document.querySelector y asigna el siguiente texto: "Hora del Desafío".
+
+let titulo = document.querySelector('h1');
+titulo.innerHTML = 'Hora del Desafío';
+
+>>> 3. Crea una función que muestre en la consola el mensaje "El botón fue clicado" siempre que se presione el botón "Console".
+
+<button onclick="botonConsole();" class="button">Console</button>
+
+function botonConsole(){
+    console.log('El botón fue clicado');
+}
+
+>>> 4. Crea una función que se ejecute cuando se haga clic en el botón "prompt", preguntando el nombre de una ciudad de Brasil. Luego, muestra una alerta con el mensaje concatenando la respuesta con el texto: "Estuve en {ciudad} y me acordé de ti".
+
+<button onclick="preguntarCiudadBrasil();" class="button">Prompt</button>
+
+function preguntarCiudadBrasil(){
+    let ciudad = prompt('Dime una ciudad de Brasil');
+    alert(`Estuve en ${ciudad} y me acordé de ti`);
+}
+
+>>> 5. Crea una función que muestre una alerta con el mensaje: "Yo amo JS" siempre que se presione el botón "Alerta".
+
+<button onclick="botonAlerta();" class="button">Alert</button>
+
+function botonAlerta(){
+    alert('Yo amo JS');
+}
+
+>>> 6. Al hacer clic en el botón "suma", pide 2 números y muestra el resultado de la suma en una alerta.
+
+<button onclick="suma();" class="button">Suma</button>
+
+function suma(){
+    let num1 = parseInt (prompt('Ingrese el primer número'));
+    let num2 = parseInt (prompt('Ingrese el segundo número'));
+    let resultado = num1 + num2;
+
+    alert(`El resultado de la suma de ${num1} + ${num2} es ${resultado}`);
+}
+
+
+D E S A F I O S  - F u n c i o n e s
+
+
+>>> 1. Crear una función que muestre "¡Hola, mundo!" en la consola.
+
+function mensaje(){
+    console.log('¡Hola, mundo!');
+    return;
+}
+
+mensaje();
+
+>>> 2. Crear una función que reciba un nombre como parámetro y muestre "¡Hola, [nombre]!" en la consola.
+
+function saludo(nombre){
+    console.log(`¡Hola, ${nombre}!`);
+    return;
+}
+
+saludo("Fica");
+
+>>> 3. Crear una función que reciba un número como parámetro y devuelva el doble de ese número.
+
+function numeroDoble(numero){
+    return (numero * 2);
+}
+
+let resultado = numeroDoble(127);
+console.log(resultado);
+
+>>> 4. Crear una función que reciba tres números como parámetros y devuelva su promedio.
+
+function promedio(num1, num2, num3){
+    return (num1+num2+num3)/3 ;
+}
+
+let resultado = promedio(7, 14, 21);
+console.log(resultado);
+
+>>> 5. Crear una función que reciba dos números como parámetros y devuelva el mayor de ellos.
+
+function encontrarNumMayor(num1, num2){
+    if (num1>num2){
+        return num1;
+    } else if (num2>num1){
+        return num2;
+    } else {
+        return ('Los dos numeros son iguales');
+    }    
+}
+
+let numeroMayor = encontrarNumMayor (153, 215);
+console.log(numeroMayor);
+
+>>> 6. Crear una función que reciba un número como parámetro y devuelva el resultado de multiplicar ese número por sí mismo.
+
+function multiplicarPorSiMismo(numero){
+    return (numero * numero);
+}
+
+let resultado = multiplicarPorSiMismo(1534);
+console.log(resultado);
+
+
+D E S A F I O S  - R e i n i c i a n d o   e l   j u e g o 
+
+
+>>> 1. Crea una función que calcule el índice de masa corporal (IMC) de una persona a partir de su altura en metros y peso en kilogramos, que se recibirán como parámetros.
+
+function calcularIMC(altura, peso) {
+    let imc = peso / (altura * altura)
+    return imc;
+}
+
+>>> 2. Crea una función que calcule el valor del factorial de un número pasado como parámetro.
+
+function calcularFactorial(numero) {
+    let factorial = 1;
+    for (let i=numero; i>0; i--){
+        factorial *= i;
+    }
+    return factorial;    
+}
+
+let resultado = calcularFactorial(13);
+console.log(resultado);
+
+>>> 3. Crea una función que convierta un valor en dólares, pasado como parámetro, y devuelva el valor equivalente en reales. Para esto, considera la cotización del dólar igual a R$4,80.
+
+function dolarizar(importe) {
+    let cotizacion = parseFloat ('4.80');
+    return importe * cotizacion;
+}
+
+let resultado = dolarizar(1843.8);
+console.log(resultado);
+
+>>> 4. Crea una función que muestre en pantalla el área y el perímetro de una sala rectangular, utilizando la altura y la anchura que se proporcionarán como parámetros.
+
+function areaRectangulo(alto, ancho) {
+    return alto * ancho;
+}
+
+function perimetroRectangulo(alto, ancho) {
+    return 2 * (alto + ancho);
+}
+
+let area = areaRectangulo(10, 20);
+let perimetro = perimetroRectangulo (10,20);
+console.log(`Area: ${area} - Perimetro ${perimetro}.`);
+
+>>> 5. Crea una función que muestre en pantalla el área y el perímetro de una sala circular, utilizando su radio que se proporcionará como parámetro. Considera Pi = 3,14.
+function areaPerimetroSalaCircular(radio) {
+    const pi = 3.14;
+    let area = pi * (radio *radio);
+    let perimetro = 2 * pi * radio;
+    return `Área: ${area} - Perímetro: ${perimetro}.`;
+}
+
+console.log(areaPerimetroSalaCircular(53));
+
+>>> 6. Crea una función que muestre en pantalla la tabla de multiplicar de un número dado como parámetro.
+function tablaDeMultiplicar(numero) {
+    for(let i=1; i<=10; i++){
+        let resultado = numero * i;
+        console.log(`${numero} x ${i} = ${resultado}`);
+    }   
+    return;
+}
+
+tablaDeMultiplicar(5);
+
+
+A C T I V I D A D   -   L i s t a s 
+
+
+>>> 1. Crea una lista vacía llamada "listaGenerica".
+
+let listaGenerica[];
+
+>>> 2. Crea una lista de lenguajes de programación llamada "lenguagesDeProgramacion con los siguientes elementos: 'JavaScript', 'C', 'C++', 'Kotlin' y 'Python'.
+
+let lenguajesDeProgramacion = ['JavaScript','C','C++','Kotlin','Python'];
+
+>>> 3. Agrega a la lista "lenguagesDeProgramacion los siguientes elementos: 'Java', 'Ruby' y 'GoLang'.
+
+lenguajesDeProgramacion.push('Java','Ruby', 'GoLang');
+
+>>> 4. Crea una función que muestre en la consola todos los elementos de la lista "lenguagesDeProgramacion.
+
+function mostrarLenguajesDeProgramacion (){
+    for (let i=0; i<lenguajesDeProgramacion.length; i++){
+        console.log(`Lenguaje de programacion: ${lenguajesDeProgramacion[i]}`);
+    }
+    console.log('xxxxxxxxxx')
+}
+
+mostrarLenguajesDeProgramacion();
+
+>>> 5. Crea una función que muestre en la consola todos los elementos de la lista "lenguagesDeProgramacion en orden inverso.
+
+function mostrarLenguajesDeProgramacionOrdenInverso (){
+    for (let i=lenguajesDeProgramacion.length-1; i>=0; i--){
+        console.log(`Lenguaje de programacion: ${lenguajesDeProgramacion[i]}`);
+    }
+}
+
+mostrarLenguajesDeProgramacionOrdenInverso();
+
+>>> 6. Crea una función que calcule el promedio de los elementos en una lista de números.
+
+function calcularPromedio(numeros) {
+    let suma = 0;
+    for (let i=0; i<numeros.length; i++){
+        suma += numeros[i];
+    }
+    return suma / numeros.length;
+}
+let listaNumeros = [1,2,3,4,5,6,7,8]; 
+console.log(`El promedio de los números es ${calcularPromedio(listaNumeros)}`);
+
+>>> 7. Crea una función que muestre en la consola el número más grande y el número más pequeño en una lista.
+
+function numeroMinimoMaximo(numeros) {
+    let numeroMaximo = Number.MIN_SAFE_INTEGER;
+    let numeroMinimo = Number.MAX_SAFE_INTEGER;
+
+    for (let i=0; i<numeros.length; i++){
+        if (numeros[i]>numeroMaximo){
+            numeroMaximo =numeros[i];
+        }
+        if (numeros[i]<numeroMinimo){
+            numeroMinimo = numeros[i];
+        }
+    }
+    return `Número maximo: ${numeroMaximo} - Número Minimo: ${numeroMinimo}`;
+}
+
+let listaNumeros = [53,11,42,83,114,5,656,97,48];
+console.log(numeroMinimoMaximo(listaNumeros));
+
+>>> 8. Crea una función que devuelva la suma de todos los elementos en una lista.
+
+function sumarElementos(numeros) {
+    let suma = 0;
+    for(let i=0; i<numeros.length; i++){
+        suma +=numeros[i];
+    }
+    return suma;
+}
+
+let listaNumeros = [5,1,42,65,123,46,12];
+console.log(sumarElementos(listaNumeros));
+
+>>> 9. Crea una función que devuelva la posición en la lista donde se encuentra un elemento pasado como parámetro, o -1 si no existe en la lista.
+
+function encontrarElemento(lista, elemento) {
+    for(let i=0; i<lista.length; i++){
+        if (lista[i] === elemento){
+            return i;
+        }
+    }
+    return -1;
+}
+
+let lista = ['Conejo',14,'',33,'mesa',7];
+console.log(encontrarElemento(lista, 'mesa'));
+
+>>> 10. Crea una función que reciba dos listas de números del mismo tamaño y devuelva una nueva lista con la suma de los elementos uno a uno.
+
+function sumarListas(lista1, lista2) {
+    let resultado = [];
+
+    if (lista1.length !== lista2.length) {
+        console.log("Las listas no tienen el mismo tamaño");
+        return;
+    }
+
+    for (let i = 0; i < lista1.length; i++) {
+        resultado.push(lista1[i] + lista2[i]);
+    }
+
+    return resultado;
+}
+
+let listaA = [1, 2, 3, 4];
+let listaB = [9, 8, 7, 6];
+
+let resultadoSuma = sumarListas(listaA, listaB);
+
+console.log(resultadoSuma);
+
+>>> 11. Crea una función que reciba una lista de números y devuelva una nueva lista con el cuadrado de cada número.
+
+function calculoCuadrados(lista) {
+    for (let i=0; i<lista.length; i++){
+        lista[i] = lista[i] * lista[i];
+    }
+    return lista;
+}
+let listaOriginal = [1, 2, 3, 4, 5];
+let listaCuadrados = calculoCuadrados(listaOriginal);
+
+console.log(listaCuadrados); 
